@@ -1,8 +1,8 @@
 echo Baso Installer 2021/03/25
-gitbase=hylinktree
-tgt=basoback_hy
-reposrc=d:\apps\repo
-repodir=/mnt/baso/.repo
+set gitbase=hylinktree
+set tgt=basoback_hy
+set reposrc=d:\apps\repo
+set repodir=/mnt/baso/.repo
 docker pull %gitbase%/%tgt%
 docker stop %tgt%
 docker rm %tgt%
