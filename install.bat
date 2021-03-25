@@ -1,5 +1,10 @@
 echo Baso Installer 2021/03/25
-docker pull hylinktree/basoback_hy
-docker stop basoback_hy
-docker rm basoback_hy
-docker run --name basoback_hy --restart always -v d:\apps\repo:/mnt/basorepo -p 8603:8603 hylinktree/basoback_hy
+gitbase=hylinktree
+tgt=basoback_hy
+reposrc=d:\apps\repo
+repodir=/mnt/baso/.repo
+docker pull %gitbase%/%tgt%
+docker stop %tgt%
+docker rm %tgt%
+docker run --name %tgt% --restart always -v %reposrc%:%repodir% -e REPODIR=%repodir% -p 8603:8603 %gitbase%/%tgt%
+
