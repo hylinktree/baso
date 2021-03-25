@@ -2,7 +2,7 @@ echo Baso Installer 2021/03/25a
 set docker_dns=--add-host db.sec.io:192.168.5.27
 set gitbase=hylinktree
 set docker_mode=-it
-set docker_cmd=bach -c "for((;;)); do echo $BASOACT , `date`; sleep 10; done;"
+set docker_cmd=bash -c "for((;;)); do echo $BASOACT , `date`; sleep 10; done;"
 
 docker network create baso 2> nul
 
