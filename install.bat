@@ -3,6 +3,7 @@ set gitbase=hylinktree
 set tgt=basoback_hy
 set reposrc=d:\apps\repo
 set repodir=/mnt/baso/.repo
+docker network create baso
 docker pull %gitbase%/%tgt%
 docker stop %tgt%
 docker rm %tgt%
