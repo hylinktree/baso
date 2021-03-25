@@ -1,4 +1,5 @@
 echo Baso Installer 2021/03/25a
+rem export GDCA_DOCKER_DNS="--add-host sttl.io:140.92.24.27"
 set gitbase=hylinktree
 set tgt=basoback_hy
 set reposrc=d:\apps\repo
