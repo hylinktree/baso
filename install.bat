@@ -22,5 +22,5 @@ set tgt=basoback_sh
 docker pull %gitbase%/%tgt%
 docker stop %tgt%
 docker rm %tgt%
-docker run --name %tgt% -d --network baso --restart always %docker_dns% -v %reposrc%:%repodir% -e REPODIR=%repodir% -p 8603:8603 %gitbase%/%tgt%
+docker run --name %tgt% -d --network baso --restart always %docker_dns%  -p 6886:6886 %gitbase%/%tgt%
 
