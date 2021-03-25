@@ -1,4 +1,4 @@
-echo Baso Installer 2021/03/25
+echo Baso Installer 2021/03/25a
 set gitbase=hylinktree
 set tgt=basoback_hy
 set reposrc=d:\apps\repo
