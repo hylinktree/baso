@@ -6,5 +6,5 @@ set repodir=/mnt/baso/.repo
 docker pull %gitbase%/%tgt%
 docker stop %tgt%
 docker rm %tgt%
-docker run --name %tgt% --restart always -v %reposrc%:%repodir% -e REPODIR=%repodir% -p 8603:8603 %gitbase%/%tgt%
+docker run --name %tgt% -d --restart always -v %reposrc%:%repodir% -e REPODIR=%repodir% -p 8603:8603 %gitbase%/%tgt%
 
