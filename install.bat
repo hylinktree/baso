@@ -8,7 +8,7 @@ set tgt=basoweb
 docker pull %gitbase%/%tgt%
 docker stop %tgt%
 docker rm %tgt%
-docker run --name %tgt% -d --restart always %docker_dns% -p 8668:8668 %gitbase%/%tgt%
+docker run --name %tgt% -d --network baso --restart always %docker_dns% -p 8668:8668 %gitbase%/%tgt%
 
 set tgt=basoback_hy
 set reposrc=d:\apps\repo
@@ -17,5 +17,5 @@ docker network create baso
 docker pull %gitbase%/%tgt%
 docker stop %tgt%
 docker rm %tgt%
-docker run --name %tgt% -d --restart always %docker_dns% -v %reposrc%:%repodir% -e REPODIR=%repodir% -p 8603:8603 %gitbase%/%tgt%
+docker run --name %tgt% -d --network baso --restart always %docker_dns% -v %reposrc%:%repodir% -e REPODIR=%repodir% -p 8603:8603 %gitbase%/%tgt%
 
