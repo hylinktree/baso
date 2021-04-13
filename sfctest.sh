@@ -35,115 +35,28 @@ for ((;$#>0;)); do
 		shift
 	fi
 	if [[ $arg == --test ]]; then
-		run 4.100.006.884 L22LSD
-		run 4.100.007.408 L22PSD
+		# run 4.100.006.884 L22LSD
+		# run 4.100.007.408 L22PSD
 
-		partno=4.100.009.216
-		sta=L13LSD
-		echo test $partno on $sta
-		curl -s "${host}/sfcdata?operid=${sta}&partno=${partno}" | jq .data
-		echo -e 
-		pause
-		sta=L13PSD
-		echo test $partno on $sta
-		curl -s "${host}/sfcdata?operid=${sta}&partno=${partno}" | jq .data
-		echo -e 
-		pause
+		run 4.100.009.598 L11S
+		run 4.100.009.598 L11D
+		run 4.100.009.598 L11SD
 
-		partno=4.100.009.598
-		sta=L11S
-		echo test $partno on $sta
-		curl -s "${host}/sfcdata?operid=${sta}&partno=${partno}" | jq .data
-		echo -e 
-		pause
+		run 4.100.009.600 L11S
+		run 4.100.009.600 L11D
+		run 4.100.009.600 L11SD
 
-		sta=L11D
-		echo test $partno on $sta
-		curl -s "${host}/sfcdata?operid=${sta}&partno=${partno}" | jq .data
-		echo -e 
-		pause
+		run 4.100.009.216 L13LSD
+		run 4.100.009.216 L13PSD
 
-		sta=L11SD
-		echo test $partno on $sta
-		curl -s "${host}/sfcdata?operid=${sta}&partno=${partno}" | jq .data
-		echo -e 
-		pause
+		run 4.100.009.594 L14LSD
+		run 4.100.009.594 L14PSD
 
-		partno=4.100.009.600
-		sta=L11S
-		echo test $partno on $sta
-		curl -s "${host}/sfcdata?operid=${sta}&partno=${partno}" | jq .data
-		echo -e 
-		pause
+		run 4.100.009.606 L25LSD
+		run 4.100.009.606 L25PSD
 
-		sta=L11D
-		echo test $partno on $sta
-		curl -s "${host}/sfcdata?operid=${sta}&partno=${partno}" | jq .data
-		echo -e 
-		pause
-		sta=L11SD
-		echo test $partno on $sta
-		curl -s "${host}/sfcdata?operid=${sta}&partno=${partno}" | jq .data
-		echo -e 
-		pause
-
-		partno=4.100.007.408
-		sta=L11S
-		echo test $partno on $sta
-		curl -s "${host}/sfcdata?operid=${sta}&partno=${partno}" | jq .data
-		echo -e 
-		pause
-		sta=L11D
-		echo test $partno on $sta
-		curl -s "${host}/sfcdata?operid=${sta}&partno=${partno}" | jq .data
-		echo -e 
-		pause
-		sta=L11SD
-		echo test $partno on $sta
-		curl -s "${host}/sfcdata?operid=${sta}&partno=${partno}" | jq .data
-		echo -e 
-		pause
-
-		partno=4.100.009.594
-		sta=L14PSD
-		echo test $partno on $sta
-		curl -s "${host}/sfcdata?operid=${sta}&partno=${partno}" | jq .data
-		echo -e 
-		pause
-
-		sta=L14LSD
-		partno=4.100.009.594
-		echo test $partno on $sta
-		curl -s "${host}/sfcdata?operid=${sta}&partno=${partno}" | jq .data
-		echo -e 
-		pause
-
-		# test L25LST on S6 machines
-		partno=4.100.009.606
-		sta=L25LSD
-		echo test $partno on $sta
-		curl -s "${host}/sfcdata?operid=${sta}&partno=${partno}" | jq .data
-		echo -e 
-		pause
-		sta=L25PSD
-		echo test $partno on $sta
-		curl -s "${host}/sfcdata?operid=${sta}&partno=${partno}" | jq .data
-		echo -e 
-		pause
-
-		partno=4.100.009.610
-		sta=L25LSD
-		echo test $partno on $sta
-		curl -s "${host}/sfcdata?operid=${sta}&partno=${partno}" | jq .data
-		echo -e 
-		pause
-		# test L25LST on KS60 machines
-		sta=L25PSD
-		partno=4.100.009.610
-		echo test $partno on $sta
-		curl -s "${host}/sfcdata?operid=${sta}&partno=${partno}" | jq .data
-		echo -e 
-		pause
+		run 4.100.009.610 L25LSD
+		run 4.100.009.610 L25PSD
 
 
 	fi
