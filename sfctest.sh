@@ -28,7 +28,7 @@ for ((;$#>0;)); do
 	arg=$1
 	shift
 	if [[ $arg == --help ]]; then
-		echo "$0 [--wait 30] --test"
+		echo "$0 [--wait seconds] --test"
 	fi
 	if [[ $arg == --wait ]]; then
 		wait=$1
