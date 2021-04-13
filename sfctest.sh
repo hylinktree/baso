@@ -3,6 +3,10 @@ host=140.92.24.47:8603
 apihost=localhost:8668
 wait=
 
+echo "Baso Sfc Test on `date`"
+echo -e
+echo -d
+
 pause() {
 	# local wait=600
 	if [[ x$wait == x ]]; then
