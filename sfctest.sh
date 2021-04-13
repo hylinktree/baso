@@ -3,9 +3,9 @@ host=140.92.24.47:8603
 apihost=localhost:8668
 wait=
 
-echo "Baso Sfc Test on `date`"
+echo "Baso Sfc Test Report"
+echo Date: `date`
 echo -e
-echo -d
 
 pause() {
 	# local wait=600
@@ -13,6 +13,15 @@ pause() {
 		return
 	fi
 	read -p "Hit Keyboard or wait $wait seconds ... " -t $wait -n 1 ch
+}
+
+run() {
+	partno=$1
+	sta=$2
+	echo test $partno on $sta
+	curl -s "${host}/sfcdata?operid=${sta}&partno=${partno}" | jq .data
+	echo -e 
+	pause
 }
 
 for ((;$#>0;)); do
@@ -26,17 +35,8 @@ for ((;$#>0;)); do
 		shift
 	fi
 	if [[ $arg == --test ]]; then
-		# partno=4.100.006.880
-		# sta=L13LSD
-		# echo test $partno on $sta
-		# curl -s "${host}/sfcdata?operid=${sta}&partno=${partno}" | jq .data
-		# echo -e 
-		# pause
-		# sta=L13PSD
-		# echo test $partno on $sta
-		# curl -s "${host}/sfcdata?operid=${sta}&partno=${partno}" | jq .data
-		# echo -e 
-		# pause
+		run 4.100.009.604 L22LSD
+		run 4.100.009.604 L22PSD
 
 		partno=4.100.009.216
 		sta=L13LSD
