@@ -35,8 +35,8 @@ for ((;$#>0;)); do
 		shift
 	fi
 	if [[ $arg == --test ]]; then
-		run 4.100.009.604 L22LSD
-		run 4.100.009.604 L22PSD
+		run 4.100.006.884 L22LSD
+		run 4.100.007.408 L22PSD
 
 		partno=4.100.009.216
 		sta=L13LSD
