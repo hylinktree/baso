@@ -19,7 +19,8 @@ run() {
 	partno=$1
 	sta=$2
 	echo test $partno on $sta
-	curl -s "${host}/sfcdata?operid=${sta}&partno=${partno}" | jq .data
+	curl -s "${host}/sfcdata?operid=${sta}&partno=${partno}" 
+	#curl -s "${host}/sfcdata?operid=${sta}&partno=${partno}" | jq .data
 	echo -e 
 	pause
 }
@@ -35,6 +36,8 @@ for ((;$#>0;)); do
 		shift
 	fi
 	if [[ $arg == --test ]]; then
+		run 4.100.007.408 L22LD
+		run 4.100.008.994 L22LD
 		run 4.100.007.408 L22LS
 		run 4.100.008.994 L22LS
 		# run 4.100.006.884 L22LSD
