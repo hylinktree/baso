@@ -36,6 +36,17 @@ for ((;$#>0;)); do
 		shift
 	fi
 	if [[ $arg == --test ]]; then
+		run 4.100.009.606 L25LS
+		run 4.100.009.606 L25LSD
+		run 4.100.007.332 L25PD
+		run 4.100.007.332 L25PSD
+		
+		# run 4.100.010.016 L14LD
+		run 4.100.009.594 L14LD
+		run 4.100.009.594 L14LSD
+		run 4.100.009.594 L14PD
+		run 4.100.009.594 L14PSD
+		
 		run 4.100.009.216 L13LSD
 		run 4.100.009.216 L13PSD
 
