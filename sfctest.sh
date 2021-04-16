@@ -36,6 +36,7 @@ for ((;$#>0;)); do
 	fi
 	if [[ $arg == --test ]]; then
 		run 4.100.007.408 L22LS
+		run 4.100.008.994 L22LS
 		# run 4.100.006.884 L22LSD
 		# run 4.100.007.408 L22PSD
 
