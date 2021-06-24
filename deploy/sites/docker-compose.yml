@@ -3,6 +3,7 @@ version: '3'
 services:
   basoweb:
     extra_hosts:
+      - "db.pri.io:${PRI_DB}"
       - "db.sec.io:${SEC_DB}"
     restart: "no"
     #restart: always
@@ -14,6 +15,7 @@ services:
 
   basoback_hy:
     extra_hosts:
+      - "db.pri.io:${PRI_DB}"
       - "db.sec.io:${SEC_DB}"
     restart: "no"
     #restart: always
@@ -28,8 +30,8 @@ services:
 
   basoback_sh:
     extra_hosts:
+      - "db.pri.io:${PRI_DB}"
       - "db.sec.io:${SEC_DB}"
-      - "host.docker.internal:${PRI_DB}"
     restart: "no"
     #restart: always
     image: ${GITBASE}/basoback_sh
