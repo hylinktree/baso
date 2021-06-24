@@ -29,6 +29,7 @@ services:
   basoback_sh:
     extra_hosts:
       - "db.sec.io:${SEC_DB}"
+      - "host.docker.internal:${PRI_DB}"
     restart: "no"
     #restart: always
     image: ${GITBASE}/basoback_sh
