@@ -2,12 +2,19 @@ version: '3'
 
 services:
   basoweb:
-    network: baso
     image: ${GITBASE}/basoweb
     ports:
       - "8668:8668"
     environment:
       BASOACT: basoweb
+
+  basoback_hy:
+    image: ${GITBASE}/basoback_hy
+    ports:
+      - "8603:8603"
+    environment:
+      BASOACT: basoback_hy
+      REPODIR: /mnt/baso/.repo
     volumes:
-#      - ./data:/data
-      - ./logs:/tmp/logs
+      - $(pwd)/.repo/:/mnt/baso/.repo
+      
