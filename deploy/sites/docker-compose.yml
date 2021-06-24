@@ -2,6 +2,10 @@ version: '3'
 
 services:
   basoweb:
+    extra_hosts:
+      - "db.sec.io:${SEC_DB}"
+    restart: "no"
+    #restart: always
     image: ${GITBASE}/basoweb
     ports:
       - "8668:8668"
@@ -9,6 +13,10 @@ services:
       BASOACT: basoweb
 
   basoback_hy:
+    extra_hosts:
+      - "db.sec.io:${SEC_DB}"
+    restart: "no"
+    #restart: always
     image: ${GITBASE}/basoback_hy
     ports:
       - "8603:8603"
@@ -16,5 +24,16 @@ services:
       BASOACT: basoback_hy
       REPODIR: /mnt/baso/.repo
     volumes:
-      - $(pwd)/.repo/:/mnt/baso/.repo
-      
+      - .repo/:/mnt/baso/.repo
+
+  basoback_sh:
+    extra_hosts:
+      - "db.sec.io:${SEC_DB}"
+    restart: "no"
+    #restart: always
+    image: ${GITBASE}/basoback_sh
+    ports:
+      - "6886:6886"
+    environment:
+      BASOACT: basoback_sh
+    
