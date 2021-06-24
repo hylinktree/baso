@@ -16,7 +16,7 @@ services:
       BASOACT: basoweb
 
   basoback_hy:
-    container_name: basoback_sh
+    container_name: basoback_hy
     extra_hosts:
       - "db.pri.io:${PRI_DB}"
       - "db.sec.io:${SEC_DB}"
